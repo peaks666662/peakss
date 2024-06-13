@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>立体旋转照片</title>
+        <meta charset="utf-8" />
+        <link href="texiao.css" rel="stylesheet" type="text/css" />
+        <style type="text/css">
+		
+
+/*立体效果*/
+.img {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+    transform-style: preserve-3d;
+    animation: rotate linear 20s infinite;
+}
+/*动画效果*/
+@-webkit-keyframes rotate {                
+    from {
+        transform: rotateX(0deg) rotateY(0deg);
+    }
+    to {
+	transform: rotateX(360deg) rotateY(360deg);
+    }
+}
+/*图片样式*/
+.pic{
+    width: 200px;
+    height: 200px;
+    transform: rotateY(0deg) translateZ(100px);
+}
+
+/*最外层容器样式*/
+.wrap {
+    width: 100px;
+    height: 100px;
+    margin: 150px;
+    position: relative;
+}
+
+/*得到立方体效果*/
+.cube {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+    transform-style: preserve-3d;
+    animation: rotate linear 20s infinite;
+}
+
+/*动画旋转的方式*/
+@-moz-keyframes rotate {                     
+    from {
+	transform: rotateX(0deg) rotateY(0deg);
+    }
+    to {
+	transform: rotateX(360deg) rotateY(360deg);
+    }
+}
+
+@-webkit-keyframes rotate {                
+    from {
+	transform: rotateX(0deg) rotateY(0deg);
+    }
+    to {
+	transform: rotateX(360deg) rotateY(360deg);
+    }
+}
+
+@-o-keyframes rotate {                    
+    from {
+	transform: rotateX(0deg) rotateY(0deg);
+    }
+    to {
+	transform: rotateX(360deg) rotateY(360deg);
+    }
+}
+/*每张图片的样式*/
+.cube div {
+	position: absolute;
+	width: 200px;
+	height: 200px;
+	opacity: 0.8;
+	/*过渡效果*/
+	transition: all .4s;
+}
+
+/*定义所有图片样式*/
+.pic {
+    width: 200px;
+    height: 200px;
+}
+
+.cube .out_front {
+    transform: rotateY(0deg) translateZ(100px);
+}
+
+.cube .out_back {
+    transform: translateZ(-100px) rotateY(180deg);
+}
+
+.cube .out_left {
+    transform: rotateY(-90deg) translateZ(100px);
+}
+
+.cube .out_right {
+	transform: rotateY(90deg) translateZ(100px);
+}
+
+.cube .out_top {
+    transform: rotateX(90deg) translateZ(100px);
+}
+
+.cube .out_bottom {
+    transform: rotateX(-90deg) translateZ(100px);
+}
+
+/*定义小正方体样式*/
+.cube span {
+    display: block;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 50px;
+    left: 50px;
+}
+
+.cube .in_pic {
+    width: 100px;
+    height: 100px;
+}
+
+.cube .in_front {
+    transform: rotateY(0deg) translateZ(50px);
+}
+
+.cube .in_back {
+    transform: translateZ(-50px) rotateY(180deg);
+}
+
+.cube .in_left {
+    transform: rotateY(-90deg) translateZ(50px);
+}
+
+.cube .in_right {
+    transform: rotateY(90deg) translateZ(50px);
+}
+
+.cube .in_top {
+    transform: rotateX(90deg) translateZ(50px);
+}
+
+.cube .in_bottom {
+    transform: rotateX(-90deg) translateZ(50px);
+}
+
+/*鼠标移入后样式*/
+.cube:hover .out_front {
+    transform: rotateY(0deg) translateZ(200px);
+}
+
+.cube:hover .out_back {
+    transform: translateZ(-200px) rotateY(180deg);
+}
+
+.cube:hover .out_left {
+    transform: rotateY(-90deg) translateZ(200px);
+}
+
+.cube:hover .out_right {
+    transform: rotateY(90deg) translateZ(200px);
+}
+
+.cube:hover .out_top {
+    transform: rotateX(90deg) translateZ(200px);
+}
+
+.cube:hover .out_bottom {
+    transform: rotateX(-90deg) translateZ(200px);
+}
+		
+		</style>
+		<script type="text/javascript" src="jquery-3.4.1.min.js"></script>
+    </head>
+    
+    
+<body>
+		<div class="wrap">
+            <!--外层图片-->
+            
+          <div class="cube">
+              <div class="out_front"><img src="../../微信/魏雨涵/8d3681b7f24fbbd6bdee223a1e24202.jpg"></div>
+                <div class="out_back"><img src="../../微信/魏雨涵/0af91c8b8413caa5dfe55ae5aeda6cf.jpg" ></div>
+                <div class="out_left"><img src="../../微信/魏雨涵/3b0950d4accd190780b998d996ffda7.jpg" ></div>
+                <div class="out_right"><img src="../../微信/魏雨涵/4bfd6181fcc2800e0ecb48527f5d4ed.jpg"></div>
+                <div class="out_top"><img src="../../微信/魏雨涵/579f4f34d346a7695b1d3edc4747524.jpg"></div>
+            <div class="out_bottom"><img src="../../微信/魏雨涵/930f84e7c9a114f61cabd76cbc5ff0a.jpg"></div>
+				
+              <!--里面小正方体 --> 
+              <span class="in_front"><img src="../../微信/魏雨涵/58e64f2e9e9cddec9a09701bb993f3a.jpg" ></span>
+              <span class="in_back"><img src="../../微信/魏雨涵/ffba203db6cf0d99b2fdabf136c1e94.jpg" ></span>
+              <span class="in_left"><img src="../../微信/魏雨涵/a31f35eea55080f89585a8dfe5d1368.jpg" ></span>
+              <span class="in_right"><img src="../../微信/魏雨涵/9129e1b15825e9fe27fdd18f4f00e6b.jpg" ></span>
+              <span class="in_top"><img src="../../微信/魏雨涵/516eb5bb1d85ab9ecb1dbdbe05d0ebb.jpg" ></span>
+              <span class="in_bottom"><img src="../../微信/魏雨涵/bb4c92bbf82411c9d87b35178ea92b8.jpg"></span>
+            </div>
+        </div>
+</body>
+</html>
